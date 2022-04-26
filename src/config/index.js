@@ -1,6 +1,6 @@
 import { devConfig } from './dev';
 import { prodConfig } from './prod';
-import { testConfig } from './test';
+import { testConfig } from './testing';
 
 const env = process.env.NODE_ENV || 'development';
 

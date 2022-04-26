@@ -25,6 +25,7 @@ export const checkIfUserAlreadyExist = async (req, response, next) => {
     return requestResponse({ response });
   }
 };
+
 export const checkIfNumberAlreadyExist = async (req, response, next) => {
   try {
     const contact = await Contact.findOne({ phoneNumber: req.body.phoneNumber });

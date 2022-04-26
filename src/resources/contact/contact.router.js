@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { Routes } from './routes';
+import { ROUTES } from './routes';
 import { ContactController } from './contact.controller';
 import { checkIfNumberAlreadyExist, checkIfUserAlreadyExist, validateCreateContactFormdata } from './contact.middleware';
 
-const { CONTACT, SINGLE_CONTACT } = Routes;
+const { CONTACT, SINGLE_CONTACT } = ROUTES;
 const {
   createContact, getAllContacts, getAContact, editContact, deleteContact,
 } = ContactController;
