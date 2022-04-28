@@ -65,6 +65,9 @@ These are the HTTP response codes used in this project.
 ## The API Endpoints are hosted on heroku
 https://nodecontacts-app.herokuapp.com/api/v1
 
+## The API Documentaion is hosted on netlify
+https://contacts-app-documentation.netlify.app
+
 ## Author
 Jane U. Onwumere
 
