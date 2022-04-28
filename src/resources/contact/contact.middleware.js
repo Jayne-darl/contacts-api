@@ -14,7 +14,8 @@ export const validateCreateContactFormdata = async (req, response, next) => {
 
 export const checkIfUserAlreadyExist = async (req, response, next) => {
   try {
-    const contact = await Contact.findOne({ email: req.body.email });
+    const contact = await Contact.findOne({ email: req.body.email, ...(req.params?.id && { _id: { $ne: req.params?.id } }) });
+
     if (contact) {
       return requestResponse({
         response, statusCode: 400, message: 'Contact with email already exist',
@@ -28,7 +29,7 @@ export const checkIfUserAlreadyExist = async (req, response, next) => {
 
 export const checkIfNumberAlreadyExist = async (req, response, next) => {
   try {
-    const contact = await Contact.findOne({ phoneNumber: req.body.phoneNumber });
+    const contact = await Contact.findOne({ phoneNumber: req.body.phoneNumber, ...(req.params?.id && { _id: { $ne: req.params?.id } }) });
     if (contact) {
       return requestResponse({
         response, statusCode: 400, message: 'Contact already exist',
